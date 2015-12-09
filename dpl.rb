@@ -29,7 +29,7 @@ end
 clis = deployments.map do |deploy|
   unless deploy.is_a?(Hash)
     puts "WARN: skipped, hash expected, but got: #{deployment.class.to_s.downcase} with: #{deploy.inspect}"
-    
+    next    
   end
 
   args = deploy.inject([]) do |arr, (key, value)|
